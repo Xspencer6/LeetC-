@@ -37,7 +37,7 @@ void printLink(ListNode* l){
 int main(){
     Solution s;
     // singly linked list
-    ListNode* l1 = new ListNode(1);
+    ListNode* l1 = new ListNode(2);
     l1->next = new ListNode(2);
     l1->next->next = new ListNode(3);
     l1->next->next->next = new ListNode(3);
