@@ -41,6 +41,7 @@ int main(){
     l1->next = new ListNode(2);
     l1->next->next = new ListNode(3);
     l1->next->next->next = new ListNode(3);
+    l1->next->next->next->next = new ListNode(4);
 
     printLink(s.deleteDuplicates(l1));
 
