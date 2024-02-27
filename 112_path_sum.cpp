@@ -6,3 +6,7 @@ bool hasPathSum(TreeNode* root, int targetSum){
     // call left and right target - value
     return hasPathSum(root->left, targetSum - root->val) || hasPathSum(root->right, targetSum - root->val);
 }
+
+int main(){
+    return 0;
+}
