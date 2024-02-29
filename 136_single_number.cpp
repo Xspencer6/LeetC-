@@ -11,9 +11,11 @@ int singleNumber(std::vector<int> &nums){
 
 int main(){
     std::unordered_map <int, int> maps;
-    maps[1] = 0;
-    maps[2] = 1;
-    maps[1] = 2;
+    maps[1]++;
+    maps[2]++;
+    maps[2]++;
+    maps[1]++;
+    maps[3]++;
 
     for (auto x : maps) std::cout << x.first << "&&" << x.second;
 
