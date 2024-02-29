@@ -4,16 +4,8 @@
 
 int singleNumber(std::vector<int> &nums){
     std::unordered_map <int, int> maps;
-    for (int i = 0; i < nums.size() - 1; i++){
-        maps[nums[i]] = i;
-        // check if last element
-        if (nums[i] == nums[nums.size() - 1]){
-            // check for duplicates
-            for (auto x : maps){
-                if (x.second == 1) return x.first;
-            }
-        }
-    }
+    for (auto i : nums) maps[i]++;
+    for (auto j : maps) if (j.second == 1) return j.first;
     return -1;
 }
 
