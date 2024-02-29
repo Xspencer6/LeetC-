@@ -10,7 +10,7 @@ int singleNumber(std::vector<int> &nums){
         if (nums[i] == nums[nums.size() - 1]){
             // check for duplicates
             for (auto x : maps){
-                if (x.second == 1) return x.first
+                if (x.second == 1) return x.first;
             }
         }
     }
