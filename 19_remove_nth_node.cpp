@@ -1,21 +1,18 @@
 #include "LinkedList.h"
 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode* curr = new ListNode(0);
-        // uses to pointer slow and fast to monitor the node before the n remove
-        ListNode* slow = curr, *fast = curr;
+    ListNode* left = head, *right = head;
 
-        for (int i = 0; i < n; i++){
-            fast = fast->next;
-        }
+    for (int i = 0; i < n; i++) right = right->next;// move right so that there will be n distance between left and right
 
-        // move slow and fast while keeping the n distance from slow and fast
-        while (fast != nullptr){
-            slow = slow->next;
-            fast = fast->next;
-        }
-        
-        // now we know that the next node is the one we need to remove, move slow pointer->next
-        slow->next = slow->next->next;
-        return curr->next;
+    if (!right) return head->next;
+
+    while(right->next != nullptr){
+        left = left->next;
+        right = right->next;
     }
+    // now we know that the next node of left is the N node that we want to remove
+    // skip it
+    left->next = left->next->next;
+    return head;
+    }   
